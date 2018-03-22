@@ -138,7 +138,7 @@ class RemoteTimestamper(object):
             http_request.add_header("Authorization", "Basic %s" % base64string)
         try:
             response = urllib2.urlopen(http_request).read()
-        except (IOError, socket.error), e:
+        except (IOError, socket.error) as e:
             raise TimestampingError('Unable to send the request to %s' % self.url, e)
         # open('response.tsr', 'w').write(response)
         tst_response, substrate = decoder.decode(response, asn1Spec=rfc3161.TimeStampResp())
