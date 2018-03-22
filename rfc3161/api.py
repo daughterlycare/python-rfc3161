@@ -7,7 +7,7 @@ import socket
 
 import rfc3161
 import hashlib
-import urllib2
+import urllib.request as urllib2
 import base64
 
 __all__ = ('RemoteTimestamper','check_timestamp','get_hash_oid', 'TimestampingError')

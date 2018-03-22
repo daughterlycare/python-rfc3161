@@ -10,7 +10,7 @@ class Rfc3161(unittest.TestCase):
 
     def test_timestamp(self):
         try:
-            certificate = file(self.CERTIFICATE).read()
+            certificate = open(self.CERTIFICATE,"r",encoding='utf-8')
             value, substrate = rfc3161.RemoteTimestamper(
                     self.PUBLIC_TSA_SERVER, certificate=certificate)(data='xx')
         except rfc3161.TimestampingError:
