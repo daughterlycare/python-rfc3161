@@ -4,9 +4,9 @@ import os.path
 import rfc3161
 
 class Rfc3161(unittest.TestCase):
-    PUBLIC_TSA_SERVER = 'http://time.certum.pl'
+    PUBLIC_TSA_SERVER = 'https://freetsa.org/tsr'
     CERTIFICATE = os.path.join(os.path.dirname(__file__),
-            '../data/certum_certificate.crt')
+            '../data/freetsa.crt')
 
     def test_timestamp(self):
         try:
